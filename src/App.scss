@@ -1,0 +1,23 @@
+
+body {
+  background-color: rgb(200, 200, 200);
+}
+
+#root {
+  position: relative;
+  min-width: 100%;
+  min-height: 100vh;
+  padding: 1%;
+  box-sizing: border-box;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-column-gap: 1rem;
+  min-width: 100%;
+  min-height: 100%;
+  @media screen and (max-width: 780px) {
+    grid-template-columns: 1fr;
+  }
+}

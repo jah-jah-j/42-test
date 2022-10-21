@@ -1,0 +1,43 @@
+{
+  "products": {
+    "insertedMoney": 0,
+    "chosenProduct": 0,
+    "products": [
+      {
+        "name": "Lay’s",
+        "description": "Chips",
+        "cost": 75
+      },
+      {
+        "name": "Coca-Cola",
+        "description": "Drink",
+        "cost": 180
+      },
+      {
+        "name": "Light",
+        "description": "Rusks",
+        "cost": 220
+      },
+      {
+        "name": "Chaka",
+        "description": "Peanut",
+        "cost": 600
+      },
+      {
+        "name": "Water",
+        "description": "Drink",
+        "cost": 40
+      },
+      {
+        "name": "Fanta",
+        "description": "Cold drink",
+        "cost": 400
+      },
+      {
+        "name": "Nutella",
+        "description": "Chocolate paste",
+        "cost": 550
+      }
+    ]
+  }
+}
