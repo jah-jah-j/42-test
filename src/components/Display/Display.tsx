@@ -1,8 +1,8 @@
 import React, {FC} from "react";
 import styles from "./Display.module.scss";
 import {useAppSelector} from "../../hooks/hooks";
-import {selectProducts} from "../../redux/slices/productsSlice";
 import DisplayItem from "../DisplayItem/DisplayItem";
+import {selectProducts} from "../../redux/selectors/products";
 
 const Display: FC = () => {
   const products = useAppSelector(selectProducts)

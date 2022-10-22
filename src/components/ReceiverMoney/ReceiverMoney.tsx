@@ -1,8 +1,8 @@
 import React, {FC} from "react";
 import Input from "../Input/Input";
 import {useAppSelector} from "../../hooks/hooks";
-import {selectChosenProduct} from "../../redux/slices/productsSlice";
 import {useMoneyValidator} from "../../hooks/useMoneyValidator";
+import {selectChosenProduct} from "../../redux/selectors/products";
 
 const ReceiverMoney: FC = () => {
   const chosenProduct = useAppSelector(selectChosenProduct)

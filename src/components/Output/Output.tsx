@@ -3,7 +3,7 @@ import styles from "./Output.module.scss";
 import Change from "../Change/Change";
 import ProductResult from "../ProductResult/ProductResult";
 import {useAppSelector} from "../../hooks/hooks";
-import {selectChosenProduct} from "../../redux/slices/productsSlice";
+import {selectChosenProduct} from "../../redux/selectors/products";
 
 const Output: FC = () => {
   const chosenProduct = useAppSelector(selectChosenProduct)

@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
 import ChangeItem from "../ChangeItem/ChangeItem";
 import {useAppSelector} from "../../hooks/hooks";
-import {selectInsertedMoney} from "../../redux/slices/productsSlice";
 import {useChange} from "../../hooks/useChange";
 import {useChosenProduct} from "../../hooks/useChosenProduct";
+import {selectInsertedMoney} from "../../redux/selectors/products";
 
 const Change: FC = () => {
   const insertedMoney = useAppSelector(selectInsertedMoney)

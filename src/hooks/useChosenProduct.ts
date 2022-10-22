@@ -1,7 +1,7 @@
 import {useAppSelector} from "./hooks";
-import {selectChosenProduct, selectProducts} from "../redux/slices/productsSlice";
 import {useEffect, useState} from "react";
 import {IProduct} from "../models/products";
+import {selectChosenProduct, selectProducts} from "../redux/selectors/products";
 
 export const useChosenProduct = () => {
   const chosenProduct = useAppSelector(selectChosenProduct)

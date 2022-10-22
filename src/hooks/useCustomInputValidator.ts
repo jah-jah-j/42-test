@@ -1,5 +1,6 @@
 import {ChangeEvent, FormEvent, useState} from "react";
-import {ValidatorFunc} from "../models/validator";
+
+export type ValidatorFunc = (value: string, clear: () => void) => void
 
 export const useCustomInputValidator = (validator: ValidatorFunc) => {
   const [inputValue, setInputValue] = useState<string>('')

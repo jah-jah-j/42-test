@@ -1,14 +1,15 @@
 import {useAppDispatch, useAppSelector} from "./hooks";
-import {selectChosenProduct, selectInsertedMoney, setInsertedMoney} from "../redux/slices/productsSlice";
+import {setInsertedMoney, setIsBank} from "../redux/slices/productsSlice";
 import {useEffect, useState} from "react";
 import {useTimeout} from "./useTimeout";
 import {useCustomInputValidator} from "./useCustomInputValidator";
-import {ValidatorFunc} from "../models/validator";
+import {selectChosenProduct, selectInsertedMoney} from "../redux/selectors/products";
 
 export const useMoneyValidator = () => {
   const insertedMoney = useAppSelector(selectInsertedMoney)
   const chosenProduct = useAppSelector(selectChosenProduct)
   const [status, setStatus] = useState('Insert money')
+  const {inputValue, onChange, onSubmit, clearInput} = useCustomInputValidator(validator)
   const dispatch = useAppDispatch()
 
   const setMoneyStatus = (bank: number = insertedMoney) => {
@@ -17,7 +18,7 @@ export const useMoneyValidator = () => {
 
   const {runTimeout} = useTimeout(setMoneyStatus, 1500)
 
-  const validator: ValidatorFunc = (value, clear) => {
+  function validator(value: string, clear: () => void) {
     const reg = /^(50|100|200|500)$/;
 
     if (!reg.test(value)) {
@@ -28,11 +29,11 @@ export const useMoneyValidator = () => {
 
     const bank = +value + insertedMoney;
     dispatch(setInsertedMoney(bank))
-    clear()
+    dispatch(setIsBank(true))
     setMoneyStatus(bank);
+    clear()
   }
 
-  const {inputValue, onChange, onSubmit, clearInput} = useCustomInputValidator(validator)
 
   useEffect(() => {
     if (insertedMoney === 0 && chosenProduct === '') {

@@ -1,11 +1,15 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {RootState} from "../store";
 import {IProducts} from "../../models/products";
 import {productsAPI} from "../../api/productsAPI";
 
-const initialState: IProducts = {
+interface IState extends IProducts {
+  isBank: boolean
+}
+
+const initialState: IState = {
   insertedMoney: 0,
   chosenProduct: '',
+  isBank: false,
   products: []
 };
 
@@ -25,6 +29,9 @@ const productsSlice = createSlice({
     },
     setChosenProduct: (state, action) => {
       state.chosenProduct = action.payload
+    },
+    setIsBank: (state, action) => {
+      state.isBank = action.payload
     }
   },
   extraReducers: (builder) => {
@@ -34,10 +41,6 @@ const productsSlice = createSlice({
   },
 })
 
-export const selectProducts = (state: RootState) => state.products.products
-export const selectInsertedMoney = (state: RootState) => state.products.insertedMoney
-export const selectChosenProduct = (state: RootState) => state.products.chosenProduct
-
-export const {setInsertedMoney, setChosenProduct} = productsSlice.actions
+export const {setInsertedMoney, setChosenProduct, setIsBank} = productsSlice.actions
 
 export default productsSlice.reducer

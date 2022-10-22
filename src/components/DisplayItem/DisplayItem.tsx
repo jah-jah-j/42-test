@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
 import styles from "../Display/Display.module.scss";
 import {useAppSelector} from "../../hooks/hooks";
-import {selectInsertedMoney} from "../../redux/slices/productsSlice";
 import {IProduct} from "../../models/products";
+import {selectInsertedMoney} from "../../redux/selectors/products";
 
 interface IProps extends IProduct {
   id: number
