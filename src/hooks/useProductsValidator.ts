@@ -1,7 +1,5 @@
 import {useAppDispatch, useAppSelector} from "./hooks";
-import {
-  setChosenProduct, setIsBank
-} from "../redux/slices/productsSlice";
+import {setChosenProduct, setIsBank} from "../redux/slices/productsSlice";
 import {useEffect, useState} from "react";
 import {useTimeout} from "./useTimeout";
 import {useCustomInputValidator} from "./useCustomInputValidator";

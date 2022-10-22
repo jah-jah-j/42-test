@@ -12,8 +12,8 @@ const ProductChoice: FC = () => {
     <form onSubmit={onSubmit}>
       <label>{status}</label>
       <Input name='product'
-             onChange={ onChange }
-             value={ inputValue }
+             onChange={onChange}
+             value={inputValue}
              isDisabled={!isBank}
       />
     </form>
