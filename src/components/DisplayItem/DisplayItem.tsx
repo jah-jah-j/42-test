@@ -1,16 +1,14 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styles from "../Display/Display.module.scss";
 import {useAppSelector} from "../../hooks/hooks";
 import {selectInsertedMoney} from "../../redux/slices/productsSlice";
+import {IProduct} from "../../models/products";
 
-interface IProps {
-  name: string
-  cost: number
-  description: string
+interface IProps extends IProduct {
   id: number
 }
 
-const DisplayItem = ({name, cost, description, id}: IProps) => {
+const DisplayItem: FC<IProps> = ({name, cost, description, id}) => {
   const insertedMoney = useAppSelector(selectInsertedMoney)
 
   return (

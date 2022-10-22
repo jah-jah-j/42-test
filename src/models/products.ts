@@ -1,11 +1,15 @@
-export interface IProducts {
-  insertedMoney: number,
-  chosenProduct: number,
-  products: [] | Product[]
+export interface IResponse {
+  products: IProduct[]
 }
 
-export type Product = {
-  name: string,
-  description: string,
+export interface IProducts {
+  insertedMoney: number
+  chosenProduct: string
+  products: [] | IProduct[]
+}
+
+export interface IProduct {
+  name: string
+  description: string
   cost: number
 }

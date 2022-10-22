@@ -1,24 +1,19 @@
 import {ChangeEvent, FC} from "react";
 
 interface IProps {
-   name: string
-   handleChange: (e: ChangeEvent<HTMLInputElement>) => void
-   values: Values
-   disabled: boolean
+  name: string
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
+  value: string
+  isDisabled: boolean
 }
 
-type Values = {
-   [key: string]: string
-}
-
-const Input: FC<IProps> = ({ name, handleChange, values, disabled = false }) => {
-   return (
-      <input name={name} type='text'
-             onChange={handleChange}
-             value={values[name]}
-             disabled={disabled}
-             placeholder='...'>
-      </input>
-   );
+const Input: FC<IProps> = ({name, onChange, value, isDisabled = false}) => {
+  return (
+    <input name={name} type='text'
+           onChange={onChange}
+           value={value}
+           disabled={isDisabled}
+           placeholder='...'/>
+  );
 };
 export default Input;
